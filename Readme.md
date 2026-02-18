@@ -38,6 +38,7 @@ SHA1-Software-Hardware-CoDesign/
 
 ```
 
+
 ## Implementation Overview
 
 1. **Software**  
@@ -51,6 +52,15 @@ SHA1-Software-Hardware-CoDesign/
    - Nios II/f softcore processor instantiated with on-chip memory, timer, JTAG UART, and PIO peripherals  
    - Software runs as a bare-metal application  
    - Verification performed on-board with LEDs and optional JTAG UART output  
+
+---
+
+## Project Highlights / Key Achievements
+
+- Designed and implemented a **SHA-1 cryptographic accelerator** on Intel Cyclone V FPGA using Verilog RTL and Nios II soft-core processor  
+- Developed **pipelined and parallel architectures**, achieving **4× speedup** over software execution  
+- Implemented **memory controllers and DMA-based data handling**; verified functionality via ModelSim simulation and on-board debugging using SignalTap  
+- Performed **static timing analysis and resource optimization** (logic utilization <60%), emphasizing hardware–software co-design for real-time systems  
 
 ---
 
@@ -70,4 +80,8 @@ SHA1-Software-Hardware-CoDesign/
 - System-level integration and testing on FPGA  
 
 ---
+
+## Notes
+
+This project **does not claim performance beyond measured implementation**, nor does it include unsupported features such as additional accelerators or advanced power analysis. All features and results are based on implemented and verified functionality.
 
