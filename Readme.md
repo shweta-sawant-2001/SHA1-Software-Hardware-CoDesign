@@ -23,16 +23,17 @@ The primary objective is to implement, verify, and benchmark SHA-1 across softwa
 
 ## Project Structure
 
+```text
 SHA1-Software-Hardware-CoDesign/
-├── software/ # Embedded C implementation for Nios II
-│ ├── sha1.c
-│ ├── sha1.h
-│ ├── utils.c
-│ └── utils.h
-├── hardware/ # SystemVerilog modules and testbench
-│ ├── sha1_core.sv
-│ ├── sha1_tb.sv
-│ └── fsoc_lab.sv # Top-level FPGA entity
+├── software/                # Embedded C implementation for Nios II
+│   ├── sha1.c
+│   ├── sha1.h
+│   ├── utils.c
+│   └── utils.h
+├── hardware/                # SystemVerilog modules and testbench
+│   ├── sha1_core.sv
+│   ├── sha1_tb.sv
+│   └── fsoc_lab.sv          # Top-level FPGA entity
 └── README.md
 
 ---
