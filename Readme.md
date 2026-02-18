@@ -1,20 +1,78 @@
-# SHA1 Software–Hardware Co-Design
+# SHA-1 Software–Hardware Co-Design
 
-This project implements the SHA-1 hashing algorithm in both:
+This project demonstrates a **software–hardware co-design of the SHA-1 cryptographic hashing algorithm** using an FPGA-based embedded system.
 
-- Embedded C (for Nios II / FPGA system)
-- SystemVerilog hardware state machine
+It combines:
 
-The goal is to demonstrate software–hardware co-design and FPGA-based verification of a cryptographic hashing algorithm.
+- **Embedded C software** for the Intel Nios II softcore processor
+- **SystemVerilog hardware** for the SHA-1 compression engine and top-level FPGA integration
+
+The primary objective is to implement, verify, and benchmark SHA-1 across software and hardware, exploring the performance and integration trade-offs of FPGA-based co-design.
+
+---
+
+## Key Features
+
+- Complete SHA-1 message preprocessing and 80-round compression function  
+- Hardware implementation using a finite state machine in SystemVerilog  
+- Software implementation in C for Nios II bare-metal execution  
+- Testbench and FPGA-based verification  
+- LED-based verification on the Arrow Max10 DECA board  
+
+---
 
 ## Project Structure
 
-- software/ → Embedded C implementation
-- hardware/ → SystemVerilog RTL and testbench
+SHA1-Software-Hardware-CoDesign/
+├── software/ # Embedded C implementation for Nios II
+│ ├── sha1.c
+│ ├── sha1.h
+│ ├── utils.c
+│ └── utils.h
+├── hardware/ # SystemVerilog modules and testbench
+│ ├── sha1_core.sv
+│ ├── sha1_tb.sv
+│ └── fsoc_lab.sv # Top-level FPGA entity
+└── README.md
 
-## Features
 
-- Full SHA-1 message padding
-- 80-round compression function
-- Hardware state machine implementation
-- Testbench verification
+
+
+---
+
+## Implementation Overview
+
+1. **Software**  
+   The C implementation runs on a Nios II softcore processor and computes the SHA-1 hash for arbitrary messages. Correctness is verified by comparing software-generated hashes with known test vectors.
+
+2. **Hardware**  
+   The SHA-1 compression engine is implemented in SystemVerilog using an FSM-based architecture. The top-level module `fsoc_lab.sv` integrates the Nios II system with I/O peripherals (LEDs, buttons, JTAG UART) and connects the hardware and software components.
+
+3. **FPGA Integration**  
+   Using Intel Quartus Prime and Platform Designer:
+   - Nios II/f softcore processor instantiated with on-chip memory, timer, JTAG UART, and PIO peripherals  
+   - Software runs as a bare-metal application  
+   - Verification performed on-board with LEDs and optional JTAG UART output  
+
+---
+
+## Verification & Testing
+
+- SHA-1 correctness verified on software implementation  
+- Hardware testbench simulation using known message vectors  
+- FPGA on-board test: LED pattern indicates SHA-1 computation success  
+
+---
+
+## Learning Outcomes
+
+- FPGA-based embedded system design with Nios II  
+- Hardware/software co-design methodology  
+- Cryptographic algorithm implementation and verification  
+- System-level integration and testing on FPGA  
+
+---
+
+## Notes
+
+This project **does not claim performance optimization, DMA acceleration, or power analysis**. All features and results are based on implemented and verified functionality.
