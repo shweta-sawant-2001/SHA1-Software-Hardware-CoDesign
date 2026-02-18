@@ -71,6 +71,3 @@ SHA1-Software-Hardware-CoDesign/
 
 ---
 
-## Notes
-
-This project **does not claim performance optimization, DMA acceleration, or power analysis**. All features and results are based on implemented and verified functionality.
