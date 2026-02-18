@@ -81,7 +81,4 @@ SHA1-Software-Hardware-CoDesign/
 
 ---
 
-## Notes
-
-This project **does not claim performance beyond measured implementation**, nor does it include unsupported features such as additional accelerators or advanced power analysis. All features and results are based on implemented and verified functionality.
 
