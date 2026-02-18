@@ -36,7 +36,7 @@ SHA1-Software-Hardware-CoDesign/
 │   └── fsoc_lab.sv          # Top-level FPGA entity
 └── README.md
 
----
+```
 
 ## Implementation Overview
 
