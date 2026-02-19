@@ -31,9 +31,8 @@ SHA1-Software-Hardware-CoDesign/
 │   ├── utils.c
 │   └── utils.h
 ├── hardware/                # SystemVerilog modules and testbench
-│   ├── sha1_core.sv
+│   ├── sha1_core.sv          # Top-level FPGA entity
 │   ├── sha1_tb.sv
-│   └── fsoc_lab.sv          # Top-level FPGA entity
 └── README.md
 
 ```
